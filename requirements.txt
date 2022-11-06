@@ -2,3 +2,4 @@ fastapi[all]
 loguru
 qrcode[pil]
 httpx
+nacos-sdk-python
