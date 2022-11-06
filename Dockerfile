@@ -1,3 +1,5 @@
+# help: https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker
+
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 
 COPY ./requirements.txt /app/requirements.txt
