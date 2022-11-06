@@ -4,6 +4,13 @@ import json
 import nacos
 
 
+# 修复 nacos-sdk-python==0.1.9 中的bug
+def fixed_inject_version_info(self, headers):
+    headers.update({"User-Agent": "Nacos-Python-Client:v" + nacos.client.VERSION})
+
+
+nacos.client.NacosClient._inject_version_info = fixed_inject_version_info
+
 NACOS_SERVER = os.getenv("NACOS_SERVER")
 NACOS_NAMESPACE = os.getenv("NACOS_NAMESPACE")
 NACOS_ENV = os.getenv("ENV", "prod")
